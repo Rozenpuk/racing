@@ -43,7 +43,7 @@ function initLayers() {
 		// if (layerData.type == 'tilelayer')
 			initLayer(layerData, tilesetSheet, roadTiles.tilewidth, roadTiles.tileheight);
 	}
-
+	console.log(mapData);
 	stage.addChild(world);
 
 	createjs.Ticker.setFPS(60);

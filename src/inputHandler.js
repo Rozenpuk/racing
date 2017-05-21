@@ -46,9 +46,9 @@ var left = input.keyboard(37),
     left.press = function() {
       if(speed !== 0) {
         if(down.isDown) {
-          car.rot = 4;
+          car.rot = 3;
         } else {
-          car.rot = -4
+          car.rot = -3
         }
       }
     };
@@ -61,9 +61,9 @@ var left = input.keyboard(37),
     right.press = function() {
       if(speed !== 0) {
         if(down.isDown) {
-          car.rot = -4;
+          car.rot = -3;
         } else {
-          car.rot = 4;
+          car.rot = 3;
         }
       }
     };
@@ -72,36 +72,21 @@ var left = input.keyboard(37),
         car.rot = 0;
       }
     };
-
-    // state = play;
     gameLoop();
 }
 
 function gameLoop() {
   requestAnimationFrame(gameLoop);
   update();
-  // renderer.render(stage);
 }
 
 function update() {
-  // console.log(true);
-  // world.y += speed;
-  // world.x += world.xChange;
   car.rotation += car.rot;
 
-  world.x = world.x + speed * -Math.sin(toRadians(car.rotation));
-  world.y = world.y + speed * Math.cos(toRadians(car.rotation));
+  world.x = Math.round(world.x + speed * -Math.sin(toRadians(car.rotation)));
+  world.y = Math.round(world.y + speed * Math.cos(toRadians(car.rotation)));
 }
 
 function toRadians(degree) {
     return degree * (Math.PI / 180);
 };
-
-// blackCar.x = blackCar.x + blackCar.vy * Math.cos(blackCar.rotation - toRadians(90));
-// blackCar.y = blackCar.y + blackCar.vy * Math.sin(blackCar.rotation - toRadians(90));
-
-//   blackCar.rotation += blackCar.rot;
-//   // TWEEN.update();
-
-//
-// }

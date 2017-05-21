@@ -5,7 +5,7 @@ var carsImage = resources.getResource('cars.png');
 var carSprite;
 
 var car = module.exports = {}
-
+//
 Object.defineProperty(car, 'rotation', {
   get: function() {
     return carContainer.rotation;
