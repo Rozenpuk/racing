@@ -5,13 +5,47 @@ var carsImage = resources.getResource('cars.png');
 var carSprite;
 
 var car = module.exports = {}
-//
-Object.defineProperty(car, 'rotation', {
-  get: function() {
-    return carContainer.rotation;
+
+Object.defineProperties(car, {
+  'rotation': {
+    get: function() {
+      return carContainer.rotation;
+    },
+    set: function(value) {
+      carContainer.rotation = value;
+    }
   },
-  set: function(value) {
-    carContainer.rotation = value;
+  'velocity': {
+    get: function() {
+      return carContainer.velocity;
+    },
+    set: function(value) {
+      carContainer.velocity = value;
+    }
+  },
+  'zeroVelocity': {
+    get: function() {
+      return carContainer.zeroVelocity;
+    },
+    set: function(value) {
+      carContainer.zeroVelocity = value;
+    }
+  },
+  'acceleration': {
+    get: function() {
+      return carContainer.acceleration;
+    },
+    set: function(value) {
+      carContainer.acceleration = value;
+    }
+  },
+  'maxVelocity': {
+    get: function() {
+      return carContainer.maxVelocity;
+    },
+    set: function(value) {
+      carContainer.maxVelocity = value;
+    }
   }
 });
 
@@ -46,4 +80,8 @@ car.init = function(stage) {
   carContainer.x = 400;
   carContainer.y = 300;
   carContainer.rotation = 0;
+  carContainer.velocity = 0;
+  carContainer.zeroVelocity = 0.9;
+  carContainer.acceleration = 1.025;
+  carContainer.maxVelocity = 10;
 }
